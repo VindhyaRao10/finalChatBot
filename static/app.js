@@ -1,7 +1,7 @@
 class Chatbox {
     constructor() {
         this.args = {
-            openButton: document.querySelector('.chatbox__button'),
+            openButton: document.querySelector('.chatbox__button button'),
             chatBox: document.querySelector('.chatbox__support'),
             sendButton: document.querySelector('.send__button'),
             optionsContainer: document.querySelector('.chatbox__options')
@@ -118,9 +118,6 @@ class Chatbox {
         optionsContainer.innerHTML = options.map(option =>
             `<button class="welcome-options button" onclick="sendMessage('${option}')">${option}</button>`
         ).join('');
-        optionsContainer.classList.add('welcome-options');
-        optionsContainer.innerHTML = optionsHtml;
-        chatbox.querySelector('.chatbox__messages').appendChild(optionsContainer);
     }
 
     showKnowMoreOptions() {
